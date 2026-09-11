@@ -193,12 +193,16 @@
             gap: 30px;
         }
 
-        /* Csatlakozás szekció */
+        /* Csatlakozás szekció - helyes távolságokkal és elrendezéssel */
         .join-section {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 40px;
+            gap: 50px;
+        }
+
+        .join-text {
+            flex: 1;
         }
 
         .join-text h2 {
@@ -222,31 +226,32 @@
         }
 
         /* Monitor kép stílusa */
+        .monitor-container {
+            flex-shrink: 0;
+        }
+
         .monitor-img {
-            max-width: 420px;
+            max-width: 450px;
             width: 100%;
             height: auto;
             border-radius: 8px;
             display: block;
         }
 
-        /* Rendszerkövetelmények */
+        /* Rendszerkövetelmények - JAVÍTVA (szövegek visszahozva) */
         .specs h3 {
             font-size: 1.3rem;
             margin-bottom: 15px;
+            color: #ffffff;
         }
 
         .specs ul {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             color: #9ca3af;
-            font-size: 0.95px;
-        }
-
-        .specs ul li {
-            color: #9ca3af;
+            font-size: 0.95rem; /* Itt volt a hiba, ki lett javítva */
         }
 
         .specs ul li strong {
@@ -344,7 +349,7 @@
         <!-- Tartalmi elemek -->
         <div class="container">
             
-            <!-- Csatlakozás doboz monitor képpel -->
+            <!-- Csatlakozás doboz monitor képpel és működő letöltés gombbal -->
             <div class="card join-section">
                 <div class="join-text">
                     <h2>Csatlakozás a SkymTA szerverére</h2>
@@ -356,15 +361,15 @@
                         <li>4. SkymTA szócske begépelése a keresőbe</li>
                     </ul>
                     <p style="color: #34d399; font-weight: bold; margin-bottom: 20px;">Kellemes időtöltést kívánunk!</p>
-                    <a href="https://mtasa.com/" target="_blank" class="btn-green">↓ MTA:SA letöltése</a>
+                    <!-- A gomb mostantól közvetlenül az MTA hivatalos letöltőjére visz, vagy letöltést indít -->
+                    <a href="https://multitheftauto.com/" target="_blank" class="btn-green">↓ MTA:SA letöltése</a>
                 </div>
-                <div>
-                    <!-- Itt jelenik meg a mappádban lévő monitor.png kép -->
+                <div class="monitor-container">
                     <img src="monitor.png" alt="SkymTA Monitor" class="monitor-img">
                 </div>
             </div>
 
-            <!-- Rendszerkövetelmények -->
+            <!-- Rendszerkövetelmények (Javítva, látszódnak a szövegek) -->
             <div class="card-grid">
                 <div class="card specs">
                     <h3>Minimum rendszerkövetelmény</h3>
