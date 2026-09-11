@@ -98,10 +98,24 @@
             border-bottom: 1px solid #1f293d;
         }
 
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
         .logo-img {
-            max-height: 40px;
+            max-height: 36px;
             width: auto;
             display: block;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.5px;
         }
 
         /* Menü stílusa elválasztó vonalakkal */
@@ -333,8 +347,9 @@
     <div id="main-content">
         <!-- Fejléc -->
         <header>
-            <a href="index.html">
+            <a href="index.html" class="logo-container">
                 <img src="Skymta.png" alt="SkymTA Logo" class="logo-img">
+                <span class="logo-text">Skymta.hu</span>
             </a>
             <nav>
                 <a href="#">UCP</a>
