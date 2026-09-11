@@ -75,7 +75,7 @@
                 <div class="card">
                     <div class="card-header">⌨️ Serial</div>
                     <div id="valSerial" style="margin-top: 10px; font-family: monospace; font-size: 0.85rem; color: #9ca3af; word-break: break-all;">
-                        11127EEDF5BDD8C4D4CCABDED3E13C72
+                       -
                     </div>
                 </div>
 
@@ -118,49 +118,49 @@
         // Ha valaki beírja a nevét, az alábbi adatok fognak betöltődni rá.
         const usersDatabase = {
             "Elo2009": {
-                accountId: "1681",
-                email: "elohalasz2020@gmail.com",
-                lastOnline: "2026. 09. 01. 23:46",
-                regDate: "2024. 09. 02. 19:47",
-                pp: "20 532 PP",
-                twoFa: "Kikapcsolva",
-                serial: "11127EEDF5BDD8C4D4CCABDED3E13C72",
-                charName: "James William",
-                charId: "1681",
-                playTime: "2 939 perc (LVL 7)",
-                money: "-407 826 $",
-                bank: "170 610 $",
-                sc: "14 504 SC",
-                charLast: "2026. 09. 01. 23:47",
+                accountId: "-",
+                email: "-"
+                lastOnline: "-",
+                regDate: "-",
+                pp: "-",
+                twoFa: "-",
+                serial: "-",
+                charName: "-",
+                charId: "-",
+                playTime: "-",
+                money: "-",
+                bank: "-",
+                sc: "-",
+                charLast: "-",
                 bans: 0,
                 jails: 0,
                 kicks: 0
             },
             "AdminPista": {
-                accountId: "42",
-                email: "pista@admin.hu",
-                lastOnline: "2026. 09. 11. 15:20",
-                regDate: "2022. 01. 10. 12:00",
-                pp: "150 000 PP",
-                twoFa: "Bekapcsolva",
-                serial: "9988776654321ABCDEF0123456789",
-                charName: "John Doe",
-                charId: "42",
-                playTime: "15 400 perc (LVL 35)",
-                money: "5 400 000 $",
-                bank: "50 000 000 $",
-                sc: "5 000 SC",
-                charLast: "2026. 09. 11. 15:20",
-                bans: 1,
-                jails: 2,
-                kicks: 4
+                accountId: "-",
+                email: "-",
+                lastOnline: "-",
+                regDate: "-",
+                pp: "-",
+                twoFa: "-",
+                serial: "-",
+                charName: "-",
+                charId: "-",
+                playTime: "-",
+                money: "-",
+                bank: "-",
+                sc: "-",
+                charLast: "-",
+                bans:-,
+                jails: -,
+                kicks: -
             }
         };
 
         // Kiolvassuk, hogy ki lépett be
         const currentUser = localStorage.getItem("skymta_user") || "Elo2009";
         const data = usersDatabase[currentUser] || {
-            accountId: "9999",
+            accountId: "-",
             email: currentUser + "@skymta.hu",
             lastOnline: "Ma",
             regDate: "2026. 01. 01.",
