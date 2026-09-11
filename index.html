@@ -103,9 +103,11 @@
             margin-left: 2px;
         }
 
+        /* Menü stílusa elválasztó vonalakkal */
         nav {
             display: flex;
-            gap: 30px;
+            align-items: center;
+            gap: 20px;
         }
 
         nav a {
@@ -119,10 +121,15 @@
             color: #10b981;
         }
 
-        /* Hero szekció */
+        .nav-divider {
+            color: #374151;
+            font-weight: 300;
+        }
+
+        /* Hero szekció - Megnövelt alsó távolsággal (padding-bottom) */
         .hero {
             text-align: center;
-            padding: 60px 20px 40px 20px;
+            padding: 60px 20px 100px 20px;
         }
 
         .hero-icon {
@@ -174,7 +181,7 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 20px 20px 80px 20px;
+            padding: 0 20px 80px 20px;
             display: flex;
             flex-direction: column;
             gap: 35px;
@@ -193,7 +200,7 @@
             gap: 30px;
         }
 
-        /* Csatlakozás szekció - helyes távolságokkal és elrendezéssel */
+        /* Csatlakozás szekció */
         .join-section {
             display: flex;
             justify-content: space-between;
@@ -225,7 +232,6 @@
             gap: 8px;
         }
 
-        /* Monitor kép stílusa */
         .monitor-container {
             flex-shrink: 0;
         }
@@ -238,7 +244,7 @@
             display: block;
         }
 
-        /* Rendszerkövetelmények - JAVÍTVA (szövegek visszahozva) */
+        /* Rendszerkövetelmények */
         .specs h3 {
             font-size: 1.3rem;
             margin-bottom: 15px;
@@ -251,7 +257,7 @@
             flex-direction: column;
             gap: 12px;
             color: #9ca3af;
-            font-size: 0.95rem; /* Itt volt a hiba, ki lett javítva */
+            font-size: 0.95rem;
         }
 
         .specs ul li strong {
@@ -330,7 +336,7 @@
         <!-- Fejléc -->
         <header>
             <a href="index.html" class="logo">SkymTA<span>.hu</span></a>
-         <nav>
+            <nav>
                 <a href="#">UCP</a>
                 <span class="nav-divider">|</span>
                 <a href="#">Segítség</a>
@@ -352,7 +358,7 @@
         <!-- Tartalmi elemek -->
         <div class="container">
             
-            <!-- Csatlakozás doboz monitor képpel és működő letöltés gombbal -->
+            <!-- Csatlakozás doboz monitor képpel -->
             <div class="card join-section">
                 <div class="join-text">
                     <h2>Csatlakozás a SkymTA szerverére</h2>
@@ -364,7 +370,6 @@
                         <li>4. SkymTA szócske begépelése a keresőbe</li>
                     </ul>
                     <p style="color: #34d399; font-weight: bold; margin-bottom: 20px;">Kellemes időtöltést kívánunk!</p>
-                    <!-- A gomb mostantól közvetlenül az MTA hivatalos letöltőjére visz, vagy letöltést indít -->
                     <a href="https://multitheftauto.com/" target="_blank" class="btn-green">↓ MTA:SA letöltése</a>
                 </div>
                 <div class="monitor-container">
@@ -372,7 +377,7 @@
                 </div>
             </div>
 
-            <!-- Rendszerkövetelmények (Javítva, látszódnak a szövegek) -->
+            <!-- Rendszerkövetelmények -->
             <div class="card-grid">
                 <div class="card specs">
                     <h3>Minimum rendszerkövetelmény</h3>
