@@ -118,7 +118,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* Menü stílusa elválasztó vonalakkal */
+        /* Menü stílusa */
         nav {
             display: flex;
             align-items: center;
@@ -186,7 +186,6 @@
             background-color: #059669;
         }
 
-        /* Fő tartalom dobozok */
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -209,7 +208,6 @@
             gap: 30px;
         }
 
-        /* Csatlakozás szekció */
         .join-section {
             display: flex;
             justify-content: space-between;
@@ -253,7 +251,6 @@
             display: block;
         }
 
-        /* Rendszerkövetelmények */
         .specs h3 {
             font-size: 1.3rem;
             margin-bottom: 15px;
@@ -273,7 +270,6 @@
             color: #ffffff;
         }
 
-        /* Discord doboz */
         .discord-box {
             display: flex;
             justify-content: space-between;
@@ -316,7 +312,6 @@
             background-color: #4752C4;
         }
 
-        /* Lábléc */
         footer {
             text-align: center;
             padding: 30px 50px;
@@ -348,11 +343,12 @@
         <!-- Fejléc -->
         <header>
             <a href="index.html" class="logo-container">
-                <img src="Skymta.png" alt="SkymTA Logo" class="logo-img">
+            <img src="Skymta.png" alt="SkymTA Logo" class="logo-img">
                 <span class="logo-text">Skymta.hu</span>
             </a>
             <nav>
-                <a href="#">UCP</a>
+                <!-- EZ ITT A JAVÍTOTT, KATTINTHATÓ UCP LINK -->
+                <a href="ucp.html">UCP</a>
                 <span class="nav-divider">|</span>
                 <a onclick="scrollToSection('csatlakozas')">Segítség</a>
                 <span class="nav-divider">|</span>
@@ -373,7 +369,6 @@
         <!-- Tartalmi elemek -->
         <div class="container">
             
-            <!-- Csatlakozás doboz monitor képpel (Segítség célpontja) -->
             <div id="csatlakozas" class="card join-section">
                 <div class="join-text">
                     <h2>Csatlakozás a SkymTA szerverére</h2>
@@ -392,7 +387,6 @@
                 </div>
             </div>
 
-            <!-- Rendszerkövetelmények -->
             <div class="card-grid">
                 <div class="card specs">
                     <h3>Minimum rendszerkövetelmény</h3>
@@ -418,7 +412,6 @@
                 </div>
             </div>
 
-            <!-- Discord doboz (Közösség célpontja) -->
             <div id="kozosseg" class="card discord-box">
                 <div>
                     <h3>Csatlakozz Discord szerverünkre</h3>
@@ -439,16 +432,13 @@
 
         </div>
 
-        <!-- Lábléc -->
         <footer>
             <div style="font-weight: bold; color: #10b981;">Skymta</div>
             <div>A legmodernebb magyar RolePlay közösség © 2026</div>
         </footer>
     </div>
 
-    <!-- JavaScript funkciók -->
     <script>
-        // Oldalra görgető funkció gombnyomásra
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
@@ -456,7 +446,6 @@
             }
         }
 
-        // Betöltő animáció
         window.addEventListener("load", function () {
             setTimeout(function () {
                 let loader = document.getElementById("loader");
