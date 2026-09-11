@@ -16,6 +16,7 @@
             background-color: #0b0f19;
             color: #ffffff;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         /* --- BETÖLTŐKÉPERNYŐ (LOADER) --- */
@@ -115,6 +116,7 @@
             text-decoration: none;
             font-size: 0.95rem;
             transition: color 0.2s;
+            cursor: pointer;
         }
 
         nav a:hover {
@@ -126,7 +128,7 @@
             font-weight: 300;
         }
 
-        /* Hero szekció - Megnövelt alsó távolsággal (padding-bottom) */
+        /* Hero szekció */
         .hero {
             text-align: center;
             padding: 60px 20px 100px 20px;
@@ -339,9 +341,11 @@
             <nav>
                 <a href="#">UCP</a>
                 <span class="nav-divider">|</span>
-                <a href="#">Segítség</a>
+                <!-- Segítség gomb -->
+                <a onclick="scrollToSection('csatlakozas')">Segítség</a>
                 <span class="nav-divider">|</span>
-                <a href="#">Közösség</a>
+                <!-- Közösség gomb -->
+                <a onclick="scrollToSection('kozosseg')">Közösség</a>
                 <span class="nav-divider">|</span>
                 <a href="szerver_szabályzat.html">Szerver Szabályzat</a>
             </nav>
@@ -358,8 +362,8 @@
         <!-- Tartalmi elemek -->
         <div class="container">
             
-            <!-- Csatlakozás doboz monitor képpel -->
-            <div class="card join-section">
+            <!-- Csatlakozás doboz monitor képpel (Segítség célpontja) -->
+            <div id="csatlakozas" class="card join-section">
                 <div class="join-text">
                     <h2>Csatlakozás a SkymTA szerverére</h2>
                     <p>Légy része Magyarország legújabb és legoptimalizáltabb közösségének!<br>Vágj bele a második életedbe, itt minden lehetséges!</p>
@@ -403,8 +407,8 @@
                 </div>
             </div>
 
-            <!-- Discord doboz -->
-            <div class="card discord-box">
+            <!-- Discord doboz (Közösség célpontja) -->
+            <div id="kozosseg" class="card discord-box">
                 <div>
                     <h3>Csatlakozz Discord szerverünkre</h3>
                     <p>Légy része a legaktívabb MTA közösségnek! Kérdezz, beszélgess más játékosokkal, értesülj az eseményekről első kézből.</p>
@@ -431,8 +435,17 @@
         </footer>
     </div>
 
-    <!-- JavaScript a betöltő animációhoz -->
+    <!-- JavaScript funkciók -->
     <script>
+        // Oldalra görgető funkció gombnyomásra
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Betöltő animáció
         window.addEventListener("load", function () {
             setTimeout(function () {
                 let loader = document.getElementById("loader");
