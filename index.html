@@ -35,16 +35,10 @@
             transition: opacity 0.5s ease;
         }
 
-        .loader-logo {
-            font-size: 3rem;
-            font-weight: bold;
-            letter-spacing: 2px;
+        .loader-logo-img {
+            max-height: 70px;
+            width: auto;
             margin-bottom: 20px;
-            color: #ffffff;
-        }
-
-        .loader-logo span {
-            color: #10b981;
         }
 
         .loader-bar-container {
@@ -90,18 +84,10 @@
             border-bottom: 1px solid #1f293d;
         }
 
-        .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #ffffff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo span {
-            color: #10b981;
-            margin-left: 2px;
+        .logo-img {
+            max-height: 40px;
+            width: auto;
+            display: block;
         }
 
         /* Menü stílusa elválasztó vonalakkal */
@@ -326,7 +312,7 @@
 
     <!-- BETÖLTŐKÉPERNYŐ -->
     <div id="loader">
-        <div class="loader-logo">Skym<span>TA</span></div>
+        <img src="Skymta.png" alt="SkymTA Logo" class="loader-logo-img">
         <div class="loader-bar-container">
             <div class="loader-bar"></div>
         </div>
@@ -337,14 +323,14 @@
     <div id="main-content">
         <!-- Fejléc -->
         <header>
-            <a href="index.html" class="logo">SkymTA<span>.hu</span></a>
+            <a href="index.html">
+                <img src="Skymta.png" alt="SkymTA Logo" class="logo-img">
+            </a>
             <nav>
                 <a href="#">UCP</a>
                 <span class="nav-divider">|</span>
-                <!-- Segítség gomb -->
                 <a onclick="scrollToSection('csatlakozas')">Segítség</a>
                 <span class="nav-divider">|</span>
-                <!-- Közösség gomb -->
                 <a onclick="scrollToSection('kozosseg')">Közösség</a>
                 <span class="nav-divider">|</span>
                 <a href="szerver_szabályzat.html">Szerver Szabályzat</a>
