@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkymTA - UCP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Itt állítjuk be a lila ucp.jpg képet teljes háttérnek */
+        body {
+            background-image: url('ucp.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Fejléc az UCP oldalon is */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(11, 15, 25, 0.85); /* Enyhén áttetsző sötét háttér, hogy látszódjon a fejléc */
+            border-bottom: 1px solid #1f293d;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            max-height: 36px;
+            width: auto;
+            display: block;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #10b981;
+        }
+
+        /* A tartalom rész egyelőre üresen hagyva a háttérrel */
+        .ucp-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fejléc -->
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="Skymta.png" alt="SkymTA Logo" class="logo-img">
+            <span class="logo-text">Skymta.hu</span>
+        </a>
+        <nav>
+            <a href="index.html">Főoldal</a>
+        </nav>
+    </header>
+
+    <!-- Itt lesz majd a bejelentkező / UCP felület, most még üres -->
+    <div class="ucp-container">
+        <!-- Üresen hagyva, hogy csak a lila háttér látszódjon -->
+    </div>
+
+</body>
+</html>
