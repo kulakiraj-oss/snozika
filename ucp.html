@@ -95,7 +95,6 @@
             z-index: 2;
         }
 
-        /* Széles, de laposabb (kisebb fenti-lenti padding) doboz */
         .login-card {
             background-color: rgba(18, 22, 33, 0.92);
             border: 1px solid #2a344d;
@@ -210,7 +209,8 @@
             <h2>Bejelentkezés</h2>
             <p>Add meg az adataid, melyekkel InGame regisztráltál.</p>
             
-            <form onsubmit="event.preventDefault(); alert('Bejelentkezés funkció hamarosan!');">
+            <!-- Átirányítás a profil.html oldalra -->
+            <form onsubmit="event.preventDefault(); window.location.href='profil.html';">
                 <div class="form-group">
                     <label>Felhasználónév</label>
                     <input type="text" class="form-control" required>
