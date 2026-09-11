@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkymTA - Profil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121621;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(11, 15, 25, 0.95);
+            border-bottom: 1px solid #1f293d;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            max-height: 36px;
+            width: auto;
+            display: block;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-right a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-right a:hover {
+            color: #ffffff;
+        }
+
+        .main-container {
+            max-width: 1300px;
+            margin: 30px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .profile-title {
+            margin-bottom: 25px;
+        }
+
+        .profile-title h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .profile-title span {
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background-color: #161b26;
+            border: 1px solid #222b3c;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .card-sub {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            margin-bottom: 20px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #1f293d;
+            font-size: 0.9rem;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: #9ca3af;
+        }
+
+        .info-value {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .info-value.green {
+            color: #34d399;
+        }
+
+        .info-value.red {
+            color: #f87171;
+        }
+
+        /* Üres szekciók stílusa (Nincs találat) */
+        .empty-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+            color: #6b7280;
+            gap: 12px;
+        }
+
+        .empty-icon {
+            width: 40px;
+            height: 40px;
+            border: 2px dashed #4b5563;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* Karakter kép doboz */
+        .char-img-container {
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            background-color: #0b0f19;
+        }
+
+        .char-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .btn-action {
+            display: block;
+            width: 100%;
+            background-color: #f3f4f6;
+            color: #111827;
+            text-align: center;
+            padding: 11px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-action:hover {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="Skymta.png" alt="SkymTA Logo" class="logo-img">
+            <span class="logo-text">Skymta.hu</span>
+        </a>
+        <div class="nav-right">
+            <span>Elo2009</span>
+            <a href="ucp.html">Kijelentkezés</a>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="profile-title">
+            <h1>Elo2009 profilja</h1>
+            <span>Account ID: 1681</span>
+        </div>
+
+        <div class="grid-layout">
+            <!-- Bal oszlop: Felhasználói adatok & Serial & Karakter -->
+            <div style="display: flex; flex-direction: column; gap: 25px;">
+                
+                <!-- Felhasználói adatok -->
+                <div class="card">
+                    <div class="card-header">
+                        👤 Felhasználói adatok
+                    </div>
+                    <div class="card-sub">Általános információk</div>
+                    
+                    <div class="info-row">
+                        <span class="info-label">Email</span>
+                        <span class="info-value">elohalasz2020@gmail.com</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Utoljára online</span>
+                        <span class="info-value">2026. 09. 01. 23:46</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Regisztráció</span>
+                        <span class="info-value">2024. 09. 02. 19:47</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Prémium egyenleg</span>
+                        <span class="info-value green">20 532 PP</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Kétlépcsős azonosítás</span>
+                        <span class="info-value red">Kikapcsolva</span>
+                    </div>
+                </div>
+
+                <!-- Serial -->
+                <div class="card">
+                    <div class="card-header">
+                        ⌨️ Serial
+                    </div>
+                    <div style="margin-top: 10px; font-family: monospace; font-size: 0.85rem; color: #9ca3af; word-break: break-all;">
+                        11127EEDF5BDD8C4D4CCABDED3E13C72
+                    </div>
+                </div>
+
+                <!-- Karakter Kártya -->
+                <div class="card">
+                    <div class="char-img-container">
+                        <img src="karakter.png" alt="Karakter kép">
+                    </div>
+                    <div class="card-header">
+                        👤 James William
+                    </div>
+                    <div class="card-sub">Karakter információk</div>
+
+                    <div class="info-row">
+                        <span class="info-label">Karakter ID</span>
+                        <span class="info-value">1681</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Játszott idő</span>
+                        <span class="info-value">2 939 perc (LVL 7)</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Készpénz</span>
+                        <span class="info-value red">-407 826 $</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Bankszámla</span>
+                        <span class="info-value green">170 610 $</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">SlotCoins</span>
+                        <span class="info-value" style="color: #fbbf24;">14 504 SC</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Utoljára használva</span>
+                        <span class="info-value">2026. 09. 01. 23:47</span>
+                    </div>
+
+                    <a href="#" class="btn-action">Karakter megtekintése</a>
+                </div>
+
+            </div>
+
+            <!-- Jobb oszlop: Kitiltások, Adminjailek, Kicsek -->
+            <div style="display: flex; flex-direction: column; gap: 25px;">
+                
+                <!-- Kitiltások -->
+                <div class="card">
+                    <div class="card-header">
+                        🚫 Kitiltások (0)
+                    </div>
+                    <div class="empty-content">
+                        <div class="empty-icon">⌀</div>
+                        <span>Nincs találat</span>
+                    </div>
+                </div>
+
+                <!-- Adminjailek -->
+                <div class="card">
+                    <div class="card-header">
+                        📋 Adminjailek (0)
+                    </div>
+                    <div class="empty-content">
+                        <div class="empty-icon">⌀</div>
+                        <span>Nincs találat</span>
+                    </div>
+                </div>
+
+                <!-- Kicsek -->
+                <div class="card">
+                    <div class="card-header">
+                        👤 Kicsek (0)
+                    </div>
+                    <div class="empty-content">
+                        <div class="empty-icon">⌀</div>
+                        <span>Nincs találat</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
