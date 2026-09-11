@@ -48,7 +48,6 @@
             <span class="logo-text">Skymta.hu</span>
         </a>
         <div class="nav-right">
-            <!-- Itt is dinamikusan megjelenik a bejelentkezett név -->
             <span id="headerUsername" style="color: #34d399; font-weight: 600;">Felhasználó</span>
             <a href="ucp.html">Kijelentkezés</a>
         </div>
@@ -57,7 +56,7 @@
     <div class="main-container">
         <div class="profile-title">
             <h1 id="profileTitleName">Profil</h1>
-            <span>Account ID: 1681</span>
+            <span id="accountIdText">Account ID: 1681</span>
         </div>
 
         <div class="grid-layout">
@@ -66,16 +65,16 @@
                 <div class="card">
                     <div class="card-header">👤 Felhasználói adatok</div>
                     <div class="card-sub">Általános információk</div>
-                    <div class="info-row"><span class="info-label">Email</span><span class="info-value">pelda@gmail.com</span></div>
-                    <div class="info-row"><span class="info-label">Utoljára online</span><span class="info-value">2026. 09. 11. 16:54</span></div>
-                    <div class="info-row"><span class="info-label">Regisztráció</span><span class="info-value">2024. 09. 02. 19:47</span></div>
-                    <div class="info-row"><span class="info-label">Prémium egyenleg</span><span class="info-value green">20 532 PP</span></div>
-                    <div class="info-row"><span class="info-label">Kétlépcsős azonosítás</span><span class="info-value red">Kikapcsolva</span></div>
+                    <div class="info-row"><span class="info-label">Email</span><span class="info-value" id="valEmail">elohalasz2020@gmail.com</span></div>
+                    <div class="info-row"><span class="info-label">Utoljára online</span><span class="info-value" id="valLastOnline">2026. 09. 01. 23:46</span></div>
+                    <div class="info-row"><span class="info-label">Regisztráció</span><span class="info-value" id="valReg">2024. 09. 02. 19:47</span></div>
+                    <div class="info-row"><span class="info-label">Prémium egyenleg</span><span class="info-value green" id="valPp">20 532 PP</span></div>
+                    <div class="info-row"><span class="info-label">Kétlépcsős azonosítás</span><span class="info-value red" id="val2fa">Kikapcsolva</span></div>
                 </div>
 
                 <div class="card">
                     <div class="card-header">⌨️ Serial</div>
-                    <div style="margin-top: 10px; font-family: monospace; font-size: 0.85rem; color: #9ca3af; word-break: break-all;">
+                    <div id="valSerial" style="margin-top: 10px; font-family: monospace; font-size: 0.85rem; color: #9ca3af; word-break: break-all;">
                         11127EEDF5BDD8C4D4CCABDED3E13C72
                     </div>
                 </div>
@@ -84,14 +83,14 @@
                     <div class="char-img-container">
                         <img src="karakter.png" alt="Karakter kép" onerror="this.style.display='none'">
                     </div>
-                    <div class="card-header">👤 James William</div>
+                    <div class="card-header" id="valCharName">👤 James William</div>
                     <div class="card-sub">Karakter információk</div>
-                    <div class="info-row"><span class="info-label">Karakter ID</span><span class="info-value">1681</span></div>
-                    <div class="info-row"><span class="info-label">Játszott idő</span><span class="info-value">2 939 perc (LVL 7)</span></div>
-                    <div class="info-row"><span class="info-label">Készpénz</span><span class="info-value red">-407 826 $</span></div>
-                    <div class="info-row"><span class="info-label">Bankszámla</span><span class="info-value green">170 610 $</span></div>
-                    <div class="info-row"><span class="info-label">SlotCoins</span><span class="info-value" style="color: #fbbf24;">14 504 SC</span></div>
-                    <div class="info-row"><span class="info-label">Utoljára használva</span><span class="info-value">2026. 09. 11. 16:54</span></div>
+                    <div class="info-row"><span class="info-label">Karakter ID</span><span class="info-value" id="valCharId">1681</span></div>
+                    <div class="info-row"><span class="info-label">Játszott idő</span><span class="info-value" id="valPlayTime">2 939 perc (LVL 7)</span></div>
+                    <div class="info-row"><span class="info-label">Készpénz</span><span class="info-value red" id="valMoney">-407 826 $</span></div>
+                    <div class="info-row"><span class="info-label">Bankszámla</span><span class="info-value green" id="valBank">170 610 $</span></div>
+                    <div class="info-row"><span class="info-label">SlotCoins</span><span class="info-value" id="valSc" style="color: #fbbf24;">14 504 SC</span></div>
+                    <div class="info-row"><span class="info-label">Utoljára használva</span><span class="info-value" id="valCharLast">2026. 09. 01. 23:47</span></div>
                     <a href="#" class="btn-action">Karakter megtekintése</a>
                 </div>
             </div>
@@ -99,15 +98,15 @@
             <!-- Jobb oszlop -->
             <div style="display: flex; flex-direction: column; gap: 25px;">
                 <div class="card">
-                    <div class="card-header">🚫 Kitiltások (0)</div>
+                    <div class="card-header" id="valBansHeader">🚫 Kitiltások (0)</div>
                     <div class="empty-content"><div class="empty-icon">⌀</div><span>Nincs találat</span></div>
                 </div>
                 <div class="card">
-                    <div class="card-header">📋 Adminjailek (0)</div>
+                    <div class="card-header" id="valJailsHeader">📋 Adminjailek (0)</div>
                     <div class="empty-content"><div class="empty-icon">⌀</div><span>Nincs találat</span></div>
                 </div>
                 <div class="card">
-                    <div class="card-header">👤 Kicsek (0)</div>
+                    <div class="card-header" id="valKicksHeader">👤 Kickek (0)</div>
                     <div class="empty-content"><div class="empty-icon">⌀</div><span>Nincs találat</span></div>
                 </div>
             </div>
@@ -115,12 +114,96 @@
     </div>
 
     <script>
-        // Betöltéskor kiolvassuk a mentett nevet, amit a bejelentkezésnél beírtak
-        const savedUser = localStorage.getItem("skymta_user");
-        if (savedUser) {
-            document.getElementById("headerUsername").innerText = savedUser;
-            document.getElementById("profileTitleName").innerText = savedUser + " profilja";
-        }
+        // Itt tárolhatod a különböző felhasználók adatait!
+        // Ha valaki beírja a nevét, az alábbi adatok fognak betöltődni rá.
+        const usersDatabase = {
+            "Elo2009": {
+                accountId: "1681",
+                email: "elohalasz2020@gmail.com",
+                lastOnline: "2026. 09. 01. 23:46",
+                regDate: "2024. 09. 02. 19:47",
+                pp: "20 532 PP",
+                twoFa: "Kikapcsolva",
+                serial: "11127EEDF5BDD8C4D4CCABDED3E13C72",
+                charName: "James William",
+                charId: "1681",
+                playTime: "2 939 perc (LVL 7)",
+                money: "-407 826 $",
+                bank: "170 610 $",
+                sc: "14 504 SC",
+                charLast: "2026. 09. 01. 23:47",
+                bans: 0,
+                jails: 0,
+                kicks: 0
+            },
+            "AdminPista": {
+                accountId: "42",
+                email: "pista@admin.hu",
+                lastOnline: "2026. 09. 11. 15:20",
+                regDate: "2022. 01. 10. 12:00",
+                pp: "150 000 PP",
+                twoFa: "Bekapcsolva",
+                serial: "9988776654321ABCDEF0123456789",
+                charName: "John Doe",
+                charId: "42",
+                playTime: "15 400 perc (LVL 35)",
+                money: "5 400 000 $",
+                bank: "50 000 000 $",
+                sc: "5 000 SC",
+                charLast: "2026. 09. 11. 15:20",
+                bans: 1,
+                jails: 2,
+                kicks: 4
+            }
+        };
+
+        // Kiolvassuk, hogy ki lépett be
+        const currentUser = localStorage.getItem("skymta_user") || "Elo2009";
+        const data = usersDatabase[currentUser] || {
+            accountId: "9999",
+            email: currentUser + "@skymta.hu",
+            lastOnline: "Ma",
+            regDate: "2026. 01. 01.",
+            pp: "0 PP",
+            twoFa: "Kikapcsolva",
+            serial: "DEMO-SERIAL-123456789",
+            charName: currentUser + " Karaktere",
+            charId: "9999",
+            playTime: "100 perc (LVL 1)",
+            money: "10 000 $",
+            bank: "50 000 $",
+            sc: "100 SC",
+            charLast: "Ma",
+            bans: 0,
+            jails: 0,
+            kicks: 0
+        };
+
+        // Kitöltjük a HTML elemeket a dinamikus adatokkal
+        document.getElementById("headerUsername").innerText = currentUser;
+        document.getElementById("profileTitleName").innerText = currentUser + " profilja";
+        document.getElementById("accountIdText").innerText = "Account ID: " + data.accountId;
+        
+        document.getElementById("valEmail").innerText = data.email;
+        document.getElementById("valLastOnline").innerText = data.lastOnline;
+        document.getElementById("valReg").innerText = data.regDate;
+        document.getElementById("valPp").innerText = data.pp;
+        document.getElementById("val2fa").innerText = data.twoFa;
+        
+        document.getElementById("valSerial").innerText = data.serial;
+        
+        document.getElementById("valCharName").innerText = "👤 " + data.charName;
+        document.getElementById("valCharId").innerText = data.charId;
+        document.getElementById("valPlayTime").innerText = data.playTime;
+        document.getElementById("valMoney").innerText = data.money;
+        document.getElementById("valBank").innerText = data.bank;
+        document.getElementById("valSc").innerText = data.sc;
+        document.getElementById("valCharLast").innerText = data.charLast;
+
+        // Dinamikus címkék a kitiltásokhoz, jailekhez, kickekhez számlálóval
+        document.getElementById("valBansHeader").innerText = "🚫 Kitiltások (" + data.bans + ")";
+        document.getElementById("valJailsHeader").innerText = "📋 Adminjailek (" + data.jails + ")";
+        document.getElementById("valKicksHeader").innerText = "👤 Kickek (" + data.kicks + ")";
     </script>
 </body>
 </html>
