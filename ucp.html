@@ -18,8 +18,9 @@
             overflow: hidden;
         }
 
-        /* Itt állítjuk be a lila ucp.jpg képet teljes háttérnek */
+        /* Itt van a kép, plusz egy háttérszín ha a kép nem töltene be */
         body {
+            background-color: #2e1a47; 
             background-image: url('ucp.jpg');
             background-size: cover;
             background-position: center;
@@ -28,13 +29,13 @@
             flex-direction: column;
         }
 
-        /* Fejléc az UCP oldalon is */
+        /* Fejléc */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background-color: rgba(11, 15, 25, 0.85); /* Enyhén áttetsző sötét háttér, hogy látszódjon a fejléc */
+            background-color: rgba(11, 15, 25, 0.85);
             border-bottom: 1px solid #1f293d;
         }
 
@@ -75,7 +76,6 @@
             color: #10b981;
         }
 
-        /* A tartalom rész egyelőre üresen hagyva a háttérrel */
         .ucp-container {
             flex: 1;
             display: flex;
@@ -97,9 +97,8 @@
         </nav>
     </header>
 
-    <!-- Itt lesz majd a bejelentkező / UCP felület, most még üres -->
     <div class="ucp-container">
-        <!-- Üresen hagyva, hogy csak a lila háttér látszódjon -->
+        <!-- Üres felület -->
     </div>
 
 </body>
