@@ -95,7 +95,6 @@
             z-index: 2;
         }
 
-        /* Itt vettem vissza a szélességet, hogy ne legyen túl nagy */
         .login-card {
             background-color: rgba(18, 22, 33, 0.92);
             border: 1px solid #2a344d;
@@ -150,28 +149,6 @@
 
         .form-control:focus {
             border-color: #10b981;
-        }
-
-        .password-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 6px;
-        }
-
-        .password-row label {
-            margin-bottom: 0;
-        }
-
-        .forgot-link {
-            font-size: 0.75rem;
-            color: #9ca3af;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .forgot-link:hover {
-            color: #10b981;
         }
 
         .checkbox-group {
@@ -240,10 +217,7 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="password-row">
-                        <label>Jelszó</label>
-                        <a href="#" class="forgot-link">Elfelejtett adatok?</a>
-                    </div>
+                    <label>Jelszó</label>
                     <input type="password" class="form-control" required>
                 </div>
 
