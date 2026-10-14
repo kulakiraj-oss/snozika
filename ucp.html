@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkymTA - Bejelentkezés</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body, html { width: 100%; height: 100%; overflow: hidden; }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        body, html { 
+            width: 100%; 
+            height: 100%; 
+            overflow: hidden; 
+        }
         body {
             background-color: #2e1a47;
             background-image: url('hatter.png');
@@ -17,42 +26,211 @@
             position: relative;
         }
         body::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.45); z-index: 1;
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.45); 
+            z-index: 1;
         }
         header {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 20px 50px; background-color: rgba(11, 15, 25, 0.85);
-            border-bottom: 1px solid #1f293d; z-index: 2;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            padding: 20px 50px; 
+            background-color: rgba(11, 15, 25, 0.85);
+            border-bottom: 1px solid #1f293d; 
+            z-index: 2;
         }
-        .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-img { max-height: 36px; width: auto; display: block; }
-        .logo-text { font-size: 1.25rem; font-weight: 700; color: #ffffff; }
-        nav a { color: #d1d5db; text-decoration: none; font-size: 0.95rem; }
-        nav a:hover { color: #10b981; }
-        .ucp-container { flex: 1; display: flex; justify-content: center; align-items: center; z-index: 2; }
-        .login-card {
-            background-color: rgba(18, 22, 33, 0.92); border: 1px solid #2a344d;
-            border-radius: 12px; padding: 24px 45px; width: 100%; max-width: 500px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); color: #ffffff; text-align: center;
+        .logo-container { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            text-decoration: none; 
         }
-        .login-card h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; }
-        .login-card p { font-size: 0.8rem; color: #9ca3af; margin-bottom: 18px; }
-        .form-group { text-align: left; margin-bottom: 14px; }
-        .form-group label { display: block; font-size: 0.75rem; color: #9ca3af; margin-bottom: 4px; text-transform: uppercase; }
+        .logo-img { 
+            max-height: 36px; 
+            width: auto; 
+            display: block; 
+        }
+        .logo-text { 
+            font-size: 1.25rem; 
+            font-weight: 700; 
+            color: #ffffff; 
+        }
+        nav a { 
+            color: #d1d5db; 
+            text-decoration: none; 
+            font-size: 0.95rem; 
+        }
+        nav a:hover { 
+            color: #10b981; 
+        }
+
+        /* UCP Container & Login Card Design */
+        .ucp-container { 
+            flex: 1; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            z-index: 2; 
+            padding: 20px;
+        }
+
+        .login-wrapper {
+            width: 100%;
+            max-width: 650px;
+            background-color: #3b404a;
+            border-radius: 4px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            color: #dcdfe4;
+        }
+
+        .login-body {
+            padding: 25px 30px;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            width: 38%;
+            text-align: right;
+            padding-right: 20px;
+            padding-top: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #e2e4e9;
+        }
+
+        .form-input-container {
+            width: 62%;
+        }
+
+        .input-group {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
         .form-control {
-            width: 100%; padding: 10px 14px; background-color: #0b0f19;
-            border: 1px solid #222d42; border-radius: 8px; color: #ffffff; font-size: 0.9rem; outline: none;
+            width: 100%;
+            padding: 8px 12px;
+            background-color: #2b2f38;
+            border: 1px solid #23262d;
+            border-radius: 2px;
+            color: #ffffff;
+            font-size: 0.9rem;
+            outline: none;
         }
-        .form-control:focus { border-color: #10b981; }
-        .checkbox-group { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; font-size: 0.85rem; color: #9ca3af; }
+
+        .form-control:focus {
+            border-color: #10b981;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 1px;
+            top: 1px;
+            bottom: 1px;
+            background-color: #323640;
+            border: none;
+            border-left: 1px solid #23262d;
+            color: #b0b5c0;
+            padding: 0 12px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .toggle-password:hover {
+            color: #ffffff;
+            background-color: #3a3f4b;
+        }
+
+        .forgot-password {
+            display: inline-block;
+            margin-top: 8px;
+            color: #3b82f6;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .checkbox-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #dcdfe4;
+            font-weight: 600;
+        }
+
+        .checkbox-row input[type="checkbox"] {
+            accent-color: #10b981;
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+        }
+
+        .login-actions {
+            background-color: #343842;
+            padding: 12px 30px;
+            border-top: 1px solid #2d313a;
+        }
+
         .btn-login {
-            width: 100%; background-color: #f3f4f6; color: #111827; padding: 11px;
-            border: none; border-radius: 8px; font-weight: 700; font-size: 0.9rem;
-            cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px;
-            text-decoration: none; transition: background-color 0.2s;
+            background-color: #2bb37c;
+            color: #ffffff;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 3px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
         }
-        .btn-login:hover { background-color: #ffffff; }
+
+        .btn-login:hover {
+            background-color: #249d6c;
+        }
+
+        .login-footer {
+            background-color: #2b2f38;
+            padding: 12px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #dcdfe4;
+        }
+
+        .btn-register {
+            background-color: #4a505d;
+            color: #ffffff;
+            padding: 4px 10px;
+            text-decoration: none;
+            border-radius: 2px;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+
+        .btn-register:hover {
+            background-color: #565d6d;
+        }
     </style>
 </head>
 <body>
@@ -66,31 +244,60 @@
     </header>
 
     <div class="ucp-container">
-        <div class="login-card">
-            <h2>Bejelentkezés</h2>
-            <p>Add meg az adataid, melyekkel InGame regisztráltál.</p>
-            
-            <div class="form-group">
-                <label>Felhasználónév</label>
-                <!-- ID-t kapott, hogy le tudjuk olvasni a JavaScripttel -->
-                <input type="text" id="usernameInput" class="form-control" placeholder="Pl. Elo2009">
+        <div class="login-wrapper">
+            <!-- Fő bejelentkező felület -->
+            <div class="login-body">
+                <!-- Felhasználónév sor -->
+                <div class="form-row">
+                    <div class="form-label">Felhasználónév vagy e-mail cím:</div>
+                    <div class="form-input-container">
+                        <input type="text" id="usernameInput" class="form-control">
+                    </div>
+                </div>
+
+                <!-- Jelszó sor -->
+                <div class="form-row">
+                    <div class="form-label">Jelszó:</div>
+                    <div class="form-input-container">
+                        <div class="input-group">
+                            <input type="password" id="passwordInput" class="form-control">
+                            <button type="button" class="toggle-password" onclick="togglePasswordVisibility()">
+                                <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                </svg>
+                                Mutat
+                            </button>
+                        </div>
+                        <a href="#" class="forgot-password">Elfelejtette a jelsavát?</a>
+                        
+                        <div class="checkbox-row">
+                            <input type="checkbox" id="remember">
+                            <label for="remember" style="cursor:pointer;">Maradj bejelentkezve</label>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label>Jelszó</label>
-                <input type="password" class="form-control" placeholder="******">
+            <!-- Belépés gomb sáv -->
+            <div class="login-actions">
+                <div class="form-row" style="margin-bottom: 0;">
+                    <div class="form-label"></div>
+                    <div class="form-input-container">
+                        <button type="button" class="btn-login" onclick="loginUser()">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                            </svg>
+                            Belépés
+                        </button>
+                    </div>
+                </div>
             </div>
 
-            <div class="checkbox-group">
-                <input type="checkbox" id="remember">
-                <label for="remember" style="margin-bottom:0; color: #9ca3af; cursor:pointer;">Emlékezz rám</label>
+            <!-- Regisztráció sáv -->
+            <div class="login-footer">
+                Nincs fiókod? <a href="#" class="btn-register">Regisztrálj most</a>
             </div>
-
-            <!-- Gomb, ami elmenti a nevet és átvisz a profilra -->
-            <button type="button" class="btn-login" onclick="loginUser()">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4m-5-5l5-5-5-5m5 5H3"></path></svg>
-                Bejelentkezés
-            </button>
         </div>
     </div>
 
@@ -98,13 +305,22 @@
         function loginUser() {
             const username = document.getElementById('usernameInput').value.trim();
             if (username === "") {
-                alert("Kérlek add meg a felhasználóneved!");
+                alert("Kérlek add meg a felhasználóneved vagy e-mail címed!");
                 return;
             }
             // Elmentjük a nevet a böngészőbe
             localStorage.setItem("skymta_user", username);
             // Átirányítunk a profil oldalra
             window.location.href = 'profil.html';
+        }
+
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('passwordInput');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
         }
     </script>
 </body>
