@@ -69,7 +69,7 @@
             color: #10b981; 
         }
 
-        /* UCP Container & Login Card Design */
+        /* UCP Container & Login Card Design - Szélesebb kialakítás */
         .ucp-container { 
             flex: 1; 
             display: flex; 
@@ -81,7 +81,7 @@
 
         .login-wrapper {
             width: 100%;
-            max-width: 650px;
+            max-width: 850px; /* Itt lett szélesebbre állítva */
             background-color: #3b404a;
             border-radius: 4px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
@@ -90,27 +90,27 @@
         }
 
         .login-body {
-            padding: 25px 30px;
+            padding: 30px 40px;
         }
 
         .form-row {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
 
         .form-label {
-            width: 38%;
+            width: 32%;
             text-align: right;
-            padding-right: 20px;
+            padding-right: 25px;
             padding-top: 8px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #e2e4e9;
         }
 
         .form-input-container {
-            width: 62%;
+            width: 68%;
         }
 
         .input-group {
@@ -121,12 +121,12 @@
 
         .form-control {
             width: 100%;
-            padding: 8px 12px;
+            padding: 10px 14px;
             background-color: #2b2f38;
             border: 1px solid #23262d;
             border-radius: 2px;
             color: #ffffff;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             outline: none;
         }
 
@@ -143,12 +143,12 @@
             border: none;
             border-left: 1px solid #23262d;
             color: #b0b5c0;
-            padding: 0 12px;
+            padding: 0 15px;
             cursor: pointer;
             font-size: 0.85rem;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
         }
 
         .toggle-password:hover {
@@ -180,25 +180,25 @@
 
         .checkbox-row input[type="checkbox"] {
             accent-color: #10b981;
-            width: 15px;
-            height: 15px;
+            width: 16px;
+            height: 16px;
             cursor: pointer;
         }
 
         .login-actions {
             background-color: #343842;
-            padding: 12px 30px;
+            padding: 15px 40px;
             border-top: 1px solid #2d313a;
         }
 
         .btn-login {
             background-color: #2bb37c;
             color: #ffffff;
-            padding: 8px 20px;
+            padding: 9px 22px;
             border: none;
             border-radius: 3px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
@@ -212,7 +212,7 @@
 
         .login-footer {
             background-color: #2b2f38;
-            padding: 12px;
+            padding: 14px;
             text-align: center;
             font-size: 0.85rem;
             color: #dcdfe4;
@@ -308,9 +308,7 @@
                 alert("Kérlek add meg a felhasználóneved vagy e-mail címed!");
                 return;
             }
-            // Elmentjük a nevet a böngészőbe
             localStorage.setItem("skymta_user", username);
-            // Átirányítunk a profil oldalra
             window.location.href = 'profil.html';
         }
 
