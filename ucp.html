@@ -69,7 +69,7 @@
             color: #10b981; 
         }
 
-        /* UCP Container & Login Card Design - Keskenyebb, állóbb formátum */
+        /* UCP Container & Login Card Design - Pontos méret a képed alapján */
         .ucp-container { 
             flex: 1; 
             display: flex; 
@@ -81,7 +81,7 @@
 
         .login-wrapper {
             width: 100%;
-            max-width: 440px; /* Jelentősen keskenyebb, nem "dagadt" */
+            max-width: 720px; /* Pont ideális hossza van, nem túl széles és nem túl keskeny */
             background-color: #3b404a;
             border-radius: 4px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
@@ -90,19 +90,27 @@
         }
 
         .login-body {
-            padding: 30px 35px;
+            padding: 35px 30px;
         }
 
-        .form-group {
+        .form-row {
+            display: flex;
+            align-items: flex-start;
             margin-bottom: 20px;
         }
 
         .form-label {
-            display: block;
-            margin-bottom: 8px;
+            width: 38%;
+            text-align: right;
+            padding-right: 20px;
+            padding-top: 8px;
             font-weight: 600;
             font-size: 0.9rem;
             color: #e2e4e9;
+        }
+
+        .form-input-container {
+            width: 62%;
         }
 
         .input-group {
@@ -113,7 +121,7 @@
 
         .form-control {
             width: 100%;
-            padding: 10px 14px;
+            padding: 9px 12px;
             background-color: #2b2f38;
             border: 1px solid #23262d;
             border-radius: 2px;
@@ -164,7 +172,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-top: 18px;
+            margin-top: 15px;
             font-size: 0.9rem;
             color: #dcdfe4;
             font-weight: 600;
@@ -172,21 +180,21 @@
 
         .checkbox-row input[type="checkbox"] {
             accent-color: #10b981;
-            width: 16px;
-            height: 16px;
+            width: 15px;
+            height: 15px;
             cursor: pointer;
         }
 
         .login-actions {
             background-color: #343842;
-            padding: 15px 35px;
+            padding: 15px 30px;
             border-top: 1px solid #2d313a;
         }
 
         .btn-login {
             background-color: #2bb37c;
             color: #ffffff;
-            padding: 10px 20px;
+            padding: 9px 20px;
             border: none;
             border-radius: 3px;
             font-weight: 700;
@@ -194,9 +202,7 @@
             cursor: pointer;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
             gap: 8px;
-            width: 100%;
             transition: background-color 0.2s;
         }
 
@@ -206,7 +212,7 @@
 
         .login-footer {
             background-color: #2b2f38;
-            padding: 15px;
+            padding: 14px;
             text-align: center;
             font-size: 0.85rem;
             color: #dcdfe4;
@@ -241,43 +247,51 @@
         <div class="login-wrapper">
             <!-- Fő bejelentkező felület -->
             <div class="login-body">
-                <!-- Felhasználónév mező -->
-                <div class="form-group">
-                    <label class="form-label">Felhasználónév vagy e-mail cím:</label>
-                    <input type="text" id="usernameInput" class="form-control">
-                </div>
-
-                <!-- Jelszó mező -->
-                <div class="form-group" style="margin-bottom: 10px;">
-                    <label class="form-label">Jelszó:</label>
-                    <div class="input-group">
-                        <input type="password" id="passwordInput" class="form-control">
-                        <button type="button" class="toggle-password" onclick="togglePasswordVisibility()">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-                            </svg>
-                            Mutat
-                        </button>
+                <!-- Felhasználónév sor -->
+                <div class="form-row">
+                    <div class="form-label">Felhasználónév vagy e-mail cím:</div>
+                    <div class="form-input-container">
+                        <input type="text" id="usernameInput" class="form-control">
                     </div>
-                    <a href="#" class="forgot-password">Elfelejtette a jelsavát?</a>
                 </div>
 
-                <!-- Maradj bejelentkezve -->
-                <div class="checkbox-row">
-                    <input type="checkbox" id="remember">
-                    <label for="remember" style="cursor:pointer;">Maradj bejelentkezve</label>
+                <!-- Jelszó sor -->
+                <div class="form-row">
+                    <div class="form-label">Jelszó:</div>
+                    <div class="form-input-container">
+                        <div class="input-group">
+                            <input type="password" id="passwordInput" class="form-control">
+                            <button type="button" class="toggle-password" onclick="togglePasswordVisibility()">
+                                <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                </svg>
+                                Mutat
+                            </button>
+                        </div>
+                        <a href="#" class="forgot-password">Elfelejtette a jelsavát?</a>
+                        
+                        <div class="checkbox-row">
+                            <input type="checkbox" id="remember">
+                            <label for="remember" style="cursor:pointer;">Maradj bejelentkezve</label>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Belépés gomb sáv -->
             <div class="login-actions">
-                <button type="button" class="btn-login" onclick="loginUser()">
-                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
-                    </svg>
-                    Belépés
-                </button>
+                <div class="form-row" style="margin-bottom: 0;">
+                    <div class="form-label"></div>
+                    <div class="form-input-container">
+                        <button type="button" class="btn-login" onclick="loginUser()">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                            </svg>
+                            Belépés
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <!-- Regisztráció sáv -->
