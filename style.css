@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FallenMTA Fórum</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #18191c;
+            color: #dcddde;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Fejléc */
+        .header-top {
+            background-color: #2f3136;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            border-bottom: 1px solid #202225;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #3ba55d;
+        }
+
+        .search-box input {
+            background-color: #202225;
+            border: 1px solid #202225;
+            padding: 7px 14px;
+            border-radius: 4px;
+            color: #dcddde;
+            width: 250px;
+            outline: none;
+        }
+
+        /* Navigációs sáv */
+        .nav-bar {
+            background-color: #2f3136;
+            padding: 10px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #202225;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            color: #b9bbbe;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #b9bbbe;
+        }
+
+        /* Fő konténer */
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Fórum szekciók */
+        .forum-section {
+            background-color: #36393f;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #202225;
+            margin-bottom: 20px;
+        }
+
+        .category-header {
+            background-color: #2f3136;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #ffffff;
+            border-bottom: 1px solid #202225;
+        }
+
+        .forum-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+            border-bottom: 1px solid #202225;
+        }
+
+        .forum-row:last-child {
+            border-bottom: none;
+        }
+
+        .forum-row.bg-1 {
+            background-color: #36393f;
+        }
+
+        .forum-row.bg-2 {
+            background-color: #2f3136;
+        }
+
+        .forum-details {
+            flex: 1;
+        }
+
+        .forum-title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 4px;
+        }
+
+        .forum-name {
+            font-weight: bold;
+            font-size: 0.95rem;
+            color: #ffffff;
+        }
+
+        /* Zöld ÚJ jelölés a dwnmta stílus alapján */
+        .badge-new {
+            background-color: #3ba55d;
+            color: white;
+            font-size: 0.65rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .forum-desc {
+            font-size: 0.8rem;
+            color: #8e9297;
+            line-height: 1.3;
+        }
+
+        .forum-stats {
+            text-align: right;
+            font-size: 0.8rem;
+            color: #8e9297;
+            min-width: 90px;
+        }
+
+        .forum-last-post {
+            width: 240px;
+            font-size: 0.8rem;
+            color: #8e9297;
+            padding-left: 15px;
+            border-left: 1px solid #202225;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #202225;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: #ffffff;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .last-post-info a {
+            color: #ffffff;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 170px;
+        }
+
+        /* Oldalsáv (Sidebar) */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-box {
+            background-color: #2f3136;
+            border-radius: 6px;
+            border: 1px solid #202225;
+            overflow: hidden;
+        }
+
+        .sidebar-title {
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #ffffff;
+            border-bottom: 1px solid #202225;
+            background-color: #36393f;
+        }
+
+        .sidebar-content {
+            padding: 12px 15px;
+            font-size: 0.82rem;
+            color: #b9bbbe;
+            line-height: 1.4;
+        }
+
+        .recent-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #36393f;
+        }
+
+        .recent-item:last-child {
+            border-bottom: none;
+        }
+
+        .recent-item a {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .recent-sub {
+            font-size: 0.75rem;
+            color: #8e9297;
+            margin-top: 2px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #8e9297;
+            border-top: 1px solid #2f3136;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Fejléc -->
+        <div class="header-top">
+            <div class="logo">Fallen<span>MTA</span></div>
+            <div class="search-box">
+                <input type="text" placeholder="Keresés...">
+            </div>
+        </div>
+
+        <div class="nav-bar">
+            <div class="nav-links">
+                <a href="#" class="active">Fórumok</a>
+                <a href="#">UCP</a>
+                <a href="#">Prémium Shop</a>
+                <a href="#">Discord</a>
+                <a href="#">Újdonságok</a>
+            </div>
+            <div class="user-info">
+                <span>asd</span>
+                <a href="#" style="background-color: #ed4245; padding: 5px 10px; border-radius: 4px; color: white; font-weight: bold;">Kijelentkezés</a>
+            </div>
+        </div>
+
+        <!-- Fő tartalom -->
+        <div class="main-container">
+            
+            <div>
+                <!-- Általános Kategória -->
+                <div class="forum-section">
+                    <div class="category-header">Általános</div>
+
+                    <div class="forum-row bg-1">
+                        <div class="forum-details">
+                            <div class="forum-title-wrapper">
+                                <a href="#" class="forum-name">Fórum Szabályzat</a>
+                            </div>
+                            <div class="forum-desc">Mielőtt a fórumot használni kezded, ezt a szabályzatot kötelezettséged átolvasni és betartani!</div>
+                        </div>
+                    </div>
+
+                    <div class="forum-row bg-2">
+                        <div class="forum-details">
+                            <div class="forum-title-wrapper">
+                                <a href="#" class="forum-name">FallenMTA Szerver Szabályzat</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forum-row bg-1">
+                        <div class="forum-details">
+                            <div class="forum-title-wrapper">
+                                <a href="#" class="forum-name">Fórum moderátorra való panasztétel</a>
+                                <span class="badge-new">Új</span>
+                            </div>
+                            <div class="forum-desc">Alfórumok ▼</div>
+                        </div>
+                        <div class="forum-stats">
+                            Téma: 3<br>Üzenet: 6
+                        </div>
+                        <div class="forum-last-post">
+                            <div class="avatar">U</div>
+                            <div class="last-post-info">
+                                <a href="#">Admin Dicséret</a>
+                                <span class="recent-sub">Szombat 19:30</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forum-row bg-2">
+                        <div class="forum-details">
+                            <div class="forum-title-wrapper">
+                                <a href="#" class="forum-name">Fórummal kapcsolatos ötletek/gondok/hibák</a>
+                            </div>
+                            <div class="forum-desc">Alfórumok ▼</div>
+                        </div>
+                        <div class="forum-stats">
+                            Téma: 13<br>Üzenet: 33
+                        </div>
+                        <div class="forum-last-post">
+                            <div class="avatar">U</div>
+                            <div class="last-post-info">
+                                <a href="#">Hiba bejelentés</a>
+                                <span class="recent-sub">Tegnap 14:15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FallenMTA - Los Santos Kategória -->
+                <div class="forum-section">
+                    <div class="category-header">FallenMTA - Los Santos</div>
+
+                    <div class="forum-row bg-1">
+                        <div class="forum-details">
+                            <div class="forum-title-wrapper">
+                                <a href="#" class="forum-name">Szerver fejlesztések</a>
+                                <span class="badge-new">Új</span>
+                            </div>
+                            <div class="forum-desc">FallenMTA changelogok.</div>
+                        </div>
+                        <div class="forum-stats">
+                            Téma: 18<br>Üzenet: 18
+                        </div>
+                        <div class="forum-last-post">
+                            <div class="avatar">FM</div>
+                            <div class="last-post-info">
+                                <a href="#">SEPTEMBER UPDATE</a>
+                                <span class="recent-sub">2026. 09. 01.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forum-row bg-2">
+                        <div class="forum-details">
+                            <div class="forum-title-wrapper">
+                                <a href="#" class="forum-name">Panaszkönyv</a>
+                                <span class="badge-new">Új</span>
+                            </div>
+                            <div class="forum-desc">FallenMTA panaszkönyv.<br>Alfórumok ▼</div>
+                        </div>
+                        <div class="forum-stats">
+                            Téma: 1.6K<br>Üzenet: 9.2K
+                        </div>
+                        <div class="forum-last-post">
+                            <div class="avatar">LN</div>
+                            <div class="last-post-info">
+                                <a href="#">Lucia Novak panaszra</a>
+                                <span class="recent-sub">Tegnap 22:19</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forum-row bg-1">
+                        <div class="forum-details">
+                            <div class="forum-title-wrapper">
+                                <a href="#" class="forum-name">FőAdmin/SzuperAdmin segítségkérés</a>
+                                <span class="badge-new">Új</span>
+                            </div>
+                            <div class="forum-desc">Alfórumok ▼</div>
+                        </div>
+                        <div class="forum-stats">
+                            Téma: 1.8K<br>Üzenet: 5.7K
+                        </div>
+                        <div class="forum-last-post">
+                            <div class="avatar">C</div>
+                            <div class="last-post-info">
+                                <a href="#">Random aj amit ucp nem is</a>
+                                <span class="recent-sub">17 perce</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forum-row bg-2">
+                        <div class="forum-details">
+                            <div class="forum-title-wrapper">
+                                <a href="#" class="forum-name">Unban kérelmek</a>
+                                <span class="badge-new">Új</span>
+                            </div>
+                            <div class="forum-desc">Kitiltás alóli kérelmek.<br>Alfórumok ▼</div>
+                        </div>
+                        <div class="forum-stats">
+                            Téma: 1.4K<br>Üzenet: 3.2K
+                        </div>
+                        <div class="forum-last-post">
+                            <div class="avatar">UK</div>
+                            <div class="last-post-info">
+                                <a href="#">UB kérelem #412</a>
+                                <span class="recent-sub">1 órája</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forum-row bg-1">
+                        <div class="forum-details">
+                            <div class="forum-title-wrapper">
+                                <a href="#" class="forum-name">Gondok/Bugok/Hibák</a>
+                                <span class="badge-new">Új</span>
+                            </div>
+                            <div class="forum-desc">Alfórumok ▼</div>
+                        </div>
+                        <div class="forum-stats">
+                            Téma: 499<br>Üzenet: 1.3K
+                        </div>
+                        <div class="forum-last-post">
+                            <div class="avatar">GB</div>
+                            <div class="last-post-info">
+                                <a href="#">Interior hiba</a>
+                                <span class="recent-sub">3 órája</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forum-row bg-2">
+                        <div class="forum-details">
+                            <div class="forum-title-wrapper">
+                                <a href="#" class="forum-name">Frakciók</a>
+                                <span class="badge-new">Új</span>
+                            </div>
+                            <div class="forum-desc">Alfórumok ▼</div>
+                        </div>
+                        <div class="forum-stats">
+                            Téma: 1.6K<br>Üzenet: 5.4K
+                        </div>
+                        <div class="forum-last-post">
+                            <div class="avatar">F</div>
+                            <div class="last-post-info">
+                                <a href="#">Leader váltás</a>
+                                <span class="recent-sub">5 órája</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forum-row bg-1">
+                        <div class="forum-details">
+                            <div class="forum-title-wrapper">
+                                <a href="#" class="forum-name">Hirdető részleg</a>
+                                <span class="badge-new">Új</span>
+                            </div>
+                            <div class="forum-desc">Minden a szerveren felhalmozott legális vagyon, eladási, vételi és csere központja! IC RÉSZLEG</div>
+                        </div>
+                        <div class="forum-stats">
+                            Téma: 59<br>Üzenet: 158
+                        </div>
+                        <div class="forum-last-post">
+                            <div class="avatar">H</div>
+                            <div class="last-post-info">
+                                <a href="#">Eladó BMW M5 e60</a>
+                                <span class="recent-sub">Tegnap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jobb oldalsáv -->
+            <div class="sidebar">
+                <div class="sidebar-box">
+                    <div class="sidebar-title">Online felhasználók</div>
+                    <div class="sidebar-content">
+                        Játékosok és vendégek böngészik az oldalt.<br><br>
+                        <strong style="color: #ed4245;">Összesen: 24 online tag</strong>
+                    </div>
+                </div>
+
+                <div class="sidebar-box">
+                    <div class="sidebar-title">Friss hozzászólások</div>
+                    <div class="sidebar-content">
+                        <div class="recent-item">
+                            <a href="#">csomagtartózás</a>
+                            <div class="recent-sub">15 perccel ezelőtt • Axe15</div>
+                        </div>
+                        <div class="recent-item">
+                            <a href="#">PD széf kulcs</a>
+                            <div class="recent-sub">54 perccel ezelőtt • Cali</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-box">
+                    <div class="sidebar-title">Névnapok</div>
+                    <div class="sidebar-content">
+                        <strong>2026. szeptember 22. kedd</strong><br>
+                        Ma <strong>Móric</strong>, holnap <strong>Tekla</strong> ünnepli a névnapját.
+                    </div>
+                </div>
+
+                <div class="sidebar-box">
+                    <div class="sidebar-title">Mai születésnapok</div>
+                    <div class="sidebar-content">
+                        Nincsenek ma születésnaposok.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            FallenMTA &copy; 2026 • Minden jog fenntartva.
+        </div>
+    </div>
+
+</body>
+</html>
