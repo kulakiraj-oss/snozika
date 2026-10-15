@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FallenMTA Fórum</title>
+    <title>Skymta Fórum</title>
     <style>
         * {
             margin: 0;
@@ -397,7 +397,7 @@
 
     <div class="wrapper">
         <div class="header-top">
-            <div class="logo">FallenMTA</div>
+            <div class="logo">Skymta</div>
             <div class="search-box">
                 <input type="text" id="searchInput" placeholder="Keresés a fórumon...">
             </div>
@@ -438,9 +438,9 @@
                         </div>
                     </div>
 
-                    <div class="forum-row bg-2" onclick="openTopic('FallenMTA Szerver Szabályzat', 'A szerver hivatalos szabályzata.')">
+                    <div class="forum-row bg-2" onclick="openTopic('Skymta Szerver Szabályzat', 'A szerver hivatalos szabályzata.')">
                         <div class="forum-details">
-                            <div class="forum-title-wrapper"><span class="forum-name">FallenMTA Szerver Szabályzat</span></div>
+                            <div class="forum-title-wrapper"><span class="forum-name">Skymta Szerver Szabályzat</span></div>
                         </div>
                     </div>
 
@@ -469,14 +469,14 @@
                     </div>
                 </div>
 
-                <!-- 2. Kategória: FallenMTA - Los Santos[cite: 7] -->
+                <!-- 2. Kategória: Skymta - Los Santos[cite: 7] -->
                 <div class="forum-section" id="forumList">
-                    <div class="category-header">FallenMTA - Los Santos <span>▲</span></div>
+                    <div class="category-header">Skymta - Los Santos <span>▲</span></div>
 
-                    <div class="forum-row bg-1" data-name="szerver fejlesztések" onclick="openTopic('Szerver fejlesztések', 'FallenMTA changelogok.')">
+                    <div class="forum-row bg-1" data-name="szerver fejlesztések" onclick="openTopic('Szerver fejlesztések', 'Skymta changelogok.')">
                         <div class="forum-details">
                             <div class="forum-title-wrapper"><span class="forum-name">Szerver fejlesztések</span></div>
-                            <div class="forum-desc">FallenMTA changelogok.</div>
+                            <div class="forum-desc">Skymta changelogok.</div>
                         </div>
                         <div class="forum-stats">Téma: 18<br>Üzenet: 18</div>
                         <div class="forum-last-post">
@@ -485,15 +485,15 @@
                         </div>
                     </div>
 
-                    <div class="forum-row bg-2" data-name="leírások ls" onclick="openTopic('Leírások [LS]', 'FallenMTA Leírások.')">
+                    <div class="forum-row bg-2" data-name="leírások ls" onclick="openTopic('Leírások [LS]', 'Skymta Leírások.')">
                         <div class="forum-details">
                             <div class="forum-title-wrapper"><span class="forum-name">Leírások [LS]</span></div>
-                            <div class="forum-desc">FallenMTA Leírások.<br>Alfórumok ▼</div>
+                            <div class="forum-desc">Skymta Leírások.<br>Alfórumok ▼</div>
                         </div>
                         <div class="forum-stats">Téma: 29<br>Üzenet: 459</div>
                         <div class="forum-last-post">
                             <div class="avatar">LS</div>
-                            <div class="last-post-info"><span>FallenMTA LS | Fraki l...</span><span class="recent-sub">Hétfő 21:10-kor • balime...</span></div>
+                            <div class="last-post-info"><span>Skymta LS | Fraki l...</span><span class="recent-sub">Hétfő 21:10-kor • balime...</span></div>
                         </div>
                     </div>
 
@@ -509,10 +509,10 @@
                         </div>
                     </div>
 
-                    <div class="forum-row bg-2" data-name="panaszkönyv ls" onclick="openTopic('Panaszkönyv [LS]', 'FallenMTA panaszkönyv.')">
+                    <div class="forum-row bg-2" data-name="panaszkönyv ls" onclick="openTopic('Panaszkönyv [LS]', 'Skymta panaszkönyv.')">
                         <div class="forum-details">
                             <div class="forum-title-wrapper"><span class="forum-name">Panaszkönyv [LS]</span></div>
-                            <div class="forum-desc">FallenMTA panaszkönyv.<br>Alfórumok ▼</div>
+                            <div class="forum-desc">Skymta panaszkönyv.<br>Alfórumok ▼</div>
                         </div>
                         <div class="forum-stats">Téma: 1.6K<br>Üzenet: 9.2K</div>
                         <div class="forum-last-post">
@@ -721,7 +721,7 @@
             const view = document.getElementById('contentView');
             view.style.display = 'block';
             document.getElementById('viewTitle').innerText = title;
-            document.getElementById('viewDesc').innerText = desc + "\n\n(Itt találhatók a FallenMTA bejegyzések és részletek.)";
+            document.getElementById('viewDesc').innerText = desc + "\n\n(Itt találhatók a Skymta bejegyzések és részletek.)";
             window.scrollTo(0, 0);
         }
 
@@ -740,7 +740,7 @@
                 alert('Kérlek add meg a téma címét!');
                 return;
             }
-            alert('Sikeresen létrehoztad a következőt a FallenMTA fórumon: "' + title + '"!');
+            alert('Sikeresen létrehoztad a következőt a Skymta fórumon: "' + title + '"!');
             document.getElementById('topicTitleInput').value = '';
             document.getElementById('topicDescInput').value = '';
             modal.style.display = 'none';
