@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FallenMTA Fórum</title>
+    <title>Skymta Fórum</title>
     <style>
         * {
             margin: 0;
@@ -335,7 +335,7 @@
                     <div class="forum-row bg-2">
                         <div class="forum-details">
                             <div class="forum-title-wrapper">
-                                <a href="#" class="forum-name">FallenMTA Szerver Szabályzat</a>
+                                <a href="#" class="forum-name">Skymta Szerver Szabályzat</a>
                             </div>
                         </div>
                     </div>
@@ -380,9 +380,9 @@
                     </div>
                 </div>
 
-                <!-- FallenMTA - Los Santos Kategória -->
+                <!-- Skymta - Los Santos Kategória -->
                 <div class="forum-section">
-                    <div class="category-header">FallenMTA - Los Santos</div>
+                    <div class="category-header">Skymta - Los Santos</div>
 
                     <div class="forum-row bg-1">
                         <div class="forum-details">
@@ -390,7 +390,7 @@
                                 <a href="#" class="forum-name">Szerver fejlesztések</a>
                                 <span class="badge-new">Új</span>
                             </div>
-                            <div class="forum-desc">FallenMTA changelogok.</div>
+                            <div class="forum-desc">Skymta changelogok.</div>
                         </div>
                         <div class="forum-stats">
                             Téma: 18<br>Üzenet: 18
@@ -410,7 +410,7 @@
                                 <a href="#" class="forum-name">Panaszkönyv</a>
                                 <span class="badge-new">Új</span>
                             </div>
-                            <div class="forum-desc">FallenMTA panaszkönyv.<br>Alfórumok ▼</div>
+                            <div class="forum-desc">Skymta panaszkönyv.<br>Alfórumok ▼</div>
                         </div>
                         <div class="forum-stats">
                             Téma: 1.6K<br>Üzenet: 9.2K
@@ -532,7 +532,7 @@
                     <div class="sidebar-title">Online felhasználók</div>
                     <div class="sidebar-content">
                         Játékosok és vendégek böngészik az oldalt.<br><br>
-                        <strong style="color: #ed4245;">Összesen: 24 online tag</strong>
+                        <strong style="color: #ed4245;">Összesen: 0 online tag</strong>
                     </div>
                 </div>
 
@@ -541,11 +541,11 @@
                     <div class="sidebar-content">
                         <div class="recent-item">
                             <a href="#">csomagtartózás</a>
-                            <div class="recent-sub">15 perccel ezelőtt • Axe15</div>
+                            <div class="recent-sub">0 perccel ezelőtt • Axe15</div>
                         </div>
                         <div class="recent-item">
                             <a href="#">PD széf kulcs</a>
-                            <div class="recent-sub">54 perccel ezelőtt • Cali</div>
+                            <div class="recent-sub">0 perccel ezelőtt • Cali</div>
                         </div>
                     </div>
                 </div>
@@ -569,7 +569,7 @@
         </div>
 
         <div class="footer">
-            FallenMTA &copy; 2026 • Minden jog fenntartva.
+            Skymta &copy; 2026 • Minden jog fenntartva.
         </div>
     </div>
 
